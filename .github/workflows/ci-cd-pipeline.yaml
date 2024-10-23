@@ -29,13 +29,13 @@ jobs:
 
   development:
     environment: development
-    needs: [test-artifact]
+    needs: [build]
     runs-on: ubuntu-latest
     steps:
       - run: echo "- Auto-deploy the artifact to the development environment" >> $GITHUB_STEP_SUMMARY
         
   staging:
-    needs: [test-artifact]
+    needs: [test-artifact, development]
     runs-on: ubuntu-latest
     steps:
       - run: |
