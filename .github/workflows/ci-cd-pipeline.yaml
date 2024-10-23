@@ -35,6 +35,7 @@ jobs:
       - run: echo "- Auto-deploy the artifact to the development environment" >> $GITHUB_STEP_SUMMARY
         
   staging:
+    environment: staging
     needs: [test-artifact, development]
     runs-on: ubuntu-latest
     steps:
