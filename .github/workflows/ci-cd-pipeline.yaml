@@ -28,6 +28,7 @@ jobs:
       - run: echo "- Simulate and test the artifact"
 
   development:
+    environment: development
     needs: [test-artifact]
     runs-on: ubuntu-latest
     steps:
